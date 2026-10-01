@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOSSIÊ — BlueBookStudio</title>
+<meta name="description" content="Dossiês confidenciais do Projeto Studio 51: cada setor do BlueBookStudio com arquivo, nível de sigilo e registros próprios.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="STUDIO51 · BlueBookStudio">
+<meta property="og:title" content="Dossiê — BlueBookStudio">
+<meta property="og:description" content="Arquivo confidencial da operação: setores, missões e registros do estúdio de produção com IA.">
+<meta property="og:image" content="https://rafaelc666.github.io/studio51/img/setores/cia.webp">
+<meta property="og:url" content="https://rafaelc666.github.io/studio51/dossie.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="dossie.css">
+</head>
+<body class="corpo-dossie">
+
+<div class="scanlines" aria-hidden="true"></div>
+<div class="vinheta" aria-hidden="true"></div>
+<div class="grid-fundo" aria-hidden="true"></div>
+
+<header class="topo">
+  <a class="marca" href="index.html" style="text-decoration:none;color:inherit">
+    <span class="logo">S<span class="logo-num">51</span></span>
+    <span class="marca-txt">STUDIO<b>51</b></span>
+  </a>
+  <span class="dossie-codigo" id="dossie-codigo">DOSSIÊ —</span>
+  <button class="selo-confid selo-baixar" id="d-baixar" type="button"
+          title="baixar o dossiê (carimba e libera o arquivo)">DOSSIÊ ⤓</button>
+</header>
+
+<main class="dossie-wrap">
+  <!-- capa do arquivo -->
+  <section class="dossie-capa" id="dossie-capa">
+    <div class="dossie-selo-area">
+      <span class="dossie-carimbo retido" id="d-carimbo">SETOR</span>
+      <div class="dossie-furos" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <p class="dossie-liberacao retido" id="d-liberacao">LIBERADO PELO GOVERNO FEDERAL<br><b>25/12/2026</b></p>
+    <p class="hero-selo" id="d-classe">classe de sigilo</p>
+    <h1 class="dossie-titulo" id="d-nome">—</h1>
+    <p class="dossie-lema" id="d-lema">—</p>
+  </section>
+
+  <!-- medidor de sigilo + meta -->
+  <section class="dossie-meta">
+    <div class="sigilo">
+      <span class="sigilo-rotulo">NÍVEL DE SIGILO</span>
+      <div class="sigilo-barra"><i id="d-sigilo"></i></div>
+      <span class="sigilo-valor" id="d-sigilo-valor">—</span>
+    </div>
+    <div class="dossie-ficha">
+      <div><span>LOCALIZAÇÃO</span><b id="d-local">—</b></div>
+      <div><span>ESTADO</span><b id="d-estado">—</b></div>
+      <div><span>MOBILIZAÇÃO</span><b id="d-mob">—</b></div>
+    </div>
+  </section>
+
+  <!-- corpo do relatório -->
+  <section class="dossie-corpo">
+    <h2 class="dossie-secao-t">RELATÓRIO DE OPERAÇÃO</h2>
+    <div class="dossie-notas" id="d-notas"></div>
+
+    <h2 class="dossie-secao-t">LINHA DO TEMPO</h2>
+    <div class="dossie-timeline" id="d-timeline"></div>
+
+    <h2 class="dossie-secao-t">CAPACIDADES VERIFICADAS</h2>
+    <div class="dossie-caps" id="d-caps"></div>
+  </section>
+
+  <!-- acesso -->
+  <section class="dossie-acesso">
+    <a class="btn btn-neon" id="d-link" href="#" target="_blank" rel="noopener">🔓 Acessar o setor</a>
+    <a class="btn btn-ghost" href="index.html">← Voltar ao arquivo</a>
+    <p class="dossie-rodape-nota">acesso monitorado · registro nº <span id="d-reg">—</span></p>
+  </section>
+
+  <!-- navegação entre dossiês -->
+  <nav class="dossie-nav" id="d-nav"></nav>
+</main>
+
+<footer class="rodape">
+  <span>BlueBookStudio · operação Projeto Studio 51 · arquivo confidencial nº 1951</span>
+  <span class="rodape-sep">·</span>
+  <span>documentos manipulados são recolhidos</span>
+</footer>
+
+<script src="dossie.js"></script>
+<script src="trilha.js"></script>
+</body>
+</html>

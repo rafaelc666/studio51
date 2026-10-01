@@ -1,0 +1,125 @@
+/* ═══ STUDIO51 — dossiês internos ═══ */
+.corpo-dossie{background:#040507}
+
+.dossie-wrap{max-width:980px;margin:0 auto;padding:44px 5vw 30px}
+
+/* ── código no topo ── */
+.dossie-codigo{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--texto-2);margin-left:auto}
+
+/* ── capa ── */
+.dossie-capa{
+  position:relative;text-align:center;padding:60px 24px 84px;
+  background:linear-gradient(180deg, rgba(13,17,24,.6), rgba(4,5,7,.4));
+  border:1px solid var(--borda);border-radius:18px;overflow:hidden;
+}
+.dossie-capa::before{ /* textura papel confidencial */
+  content:"";position:absolute;inset:0;opacity:.6;pointer-events:none;
+  background:repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 1px, transparent 1px 5px);
+}
+.dossie-selo-area{position:absolute;top:0;right:0;width:210px;height:176px;pointer-events:none}
+.dossie-carimbo{
+  position:absolute;top:40px;right:4px;transform:rotate(-32deg);
+  font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.2em;
+  border:2px solid currentColor;border-radius:4px;padding:6px 40px;
+  opacity:.9;animation:carimba .5s cubic-bezier(.2,2,.4,1) both;
+}
+@keyframes carimba{from{transform:rotate(-32deg) scale(2.4);opacity:0}to{transform:rotate(-32deg) scale(1);opacity:.9}}
+/* reduced motion: carimbo já nasce no lugar; barra de sigilo pula
+   pro valor final (width:0 sem animação deixaria ela invisível) */
+@media (prefers-reduced-motion: reduce){
+  .dossie-carimbo{animation:none}
+  .sigilo-barra i{animation:none;width:var(--w,60%)}
+}
+.dossie-furos{position:absolute;bottom:10px;left:14px;display:flex;gap:8px}
+.dossie-furos i{width:10px;height:10px;border-radius:50%;background:#030405;border:1px solid #1c2836}
+
+.dossie-titulo{font-size:clamp(34px,5.4vw,62px);font-weight:900;letter-spacing:-.02em;margin:6px 0 8px}
+.dossie-lema{color:var(--texto-2);font-size:17px;font-style:italic}
+
+/* ── sigilo + ficha ── */
+.dossie-meta{display:grid;grid-template-columns:280px 1fr;gap:16px;margin:18px 0 30px}
+.sigilo{
+  background:var(--card);border:1px solid var(--borda);border-radius:14px;
+  padding:16px 18px;display:flex;flex-direction:column;gap:8px;
+}
+.sigilo-rotulo{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--texto-2)}
+.sigilo-barra{height:8px;border-radius:4px;background:#131c26;overflow:hidden}
+.sigilo-barra i{display:block;height:100%;border-radius:4px;width:0;
+  animation:preenche 1.1s cubic-bezier(.2,.8,.2,1) .3s forwards}
+@keyframes preenche{to{width:var(--w,60%)}}
+.sigilo-valor{font-family:var(--mono);font-size:12px;color:var(--texto)}
+.dossie-ficha{background:var(--card);border:1px solid var(--borda);border-radius:14px;
+  padding:14px 18px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.dossie-ficha div{display:flex;gap:12px;align-items:baseline}
+.dossie-ficha span{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--texto-2);min-width:110px}
+.dossie-ficha b{font-size:13.5px;font-weight:600}
+
+/* ── corpo ── */
+.dossie-secao-t{
+  font-family:var(--mono);font-size:11px;letter-spacing:.26em;color:var(--verde);
+  margin:34px 0 14px;padding-bottom:8px;border-bottom:1px dashed #223040;
+}
+.dossie-nota{
+  color:var(--texto-2);font-size:14.5px;margin-bottom:12px;padding-left:14px;
+  border-left:2px solid #223040;
+}
+.dossie-nota::first-letter{color:var(--texto)}
+
+/* timeline */
+.dossie-timeline{position:relative;padding-left:22px}
+.dossie-timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;
+  background:linear-gradient(180deg,var(--verde),transparent)}
+.tl-item{position:relative;display:flex;gap:14px;margin-bottom:12px;align-items:baseline}
+.tl-item::before{content:"";position:absolute;left:-21px;top:7px;width:9px;height:9px;border-radius:50%;
+  background:var(--verde);box-shadow:0 0 10px var(--verde)}
+.tl-fase{font-family:var(--mono);font-size:11px;color:var(--verde);min-width:74px;letter-spacing:.08em;text-transform:uppercase}
+.tl-texto{color:var(--texto-2);font-size:14px}
+
+/* capacidades */
+.dossie-caps{display:flex;flex-wrap:wrap;gap:8px}
+.cap{font-family:var(--mono);font-size:11.5px;color:var(--texto);
+  border:1px solid #223040;border-radius:999px;padding:6px 14px;background:rgba(57,255,142,.04)}
+
+/* ── acesso ── */
+.dossie-acesso{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:40px}
+.dossie-rodape-nota{width:100%;font-family:var(--mono);font-size:11px;color:var(--texto-2);opacity:.7}
+
+/* ── navegação ── */
+.dossie-nav{display:flex;justify-content:space-between;gap:10px;margin-top:34px;flex-wrap:wrap}
+.dnav{
+  font-family:var(--mono);font-size:12px;color:var(--texto-2);text-decoration:none;
+  border:1px solid var(--borda);border-radius:10px;padding:10px 16px;
+  transition:color .2s,border-color .2s;
+}
+.dnav:hover{color:var(--verde);border-color:var(--verde)}
+
+@media (max-width:760px){
+  .dossie-meta{grid-template-columns:1fr}
+  .dossie-carimbo{position:static;display:inline-block;transform:rotate(-6deg);margin-bottom:10px}
+  .dossie-selo-area{position:static;width:auto;height:auto;margin-bottom:6px}
+}
+
+/* ── sigilo retido: o papel nasce limpo ──
+   carimbo e data de liberação só aparecem no clique em baixar. display:none e
+   não opacity:0 — um carimbo invisível ainda ocupa o canto e entrega o jogo. */
+.retido{display:none!important}
+/* rodapé do papel, não o canto: o carimbo de setor já mora no topo direito e o
+   h1 do nome atravessa a coluna. aqui é onde um carimbo de liberação fica num
+   documento real. entra por fade — scale(2.4) do "carimba" numa linha de 700 px
+   varreria a página inteira */
+.dossie-liberacao{
+  position:absolute;left:24px;right:24px;bottom:12px;width:auto;
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;line-height:1.8;
+  text-align:center;color:var(--ambar);text-transform:uppercase;
+  border-top:1px dashed rgba(255,176,32,.45);padding-top:9px;
+  animation:libera .5s ease both;
+}
+.dossie-liberacao b{font-size:14px;letter-spacing:.26em;color:var(--ambar)}
+@keyframes libera{from{opacity:0}to{opacity:1}}
+/* só dentro da capa: .hero-selo é a mesma classe do hero da home */
+.dossie-capa .hero-selo{max-width:440px}
+.selo-baixar{font:inherit;background:none;border:0;padding:0;cursor:pointer;
+  font-family:var(--mono);letter-spacing:.28em}
+.selo-baixar:hover{color:var(--laranja);text-shadow:0 0 12px rgba(255,176,32,.6)}
+.selo-baixar:focus-visible{outline:1px solid var(--ambar);outline-offset:4px}
+@media print{ .retido{display:none!important} }

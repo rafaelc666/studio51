@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ESTÚDIO VIRTUAL — STUDIO51</title>
+<meta name="description" content="Estúdio virtual do Projeto Studio 51: entre nos pavilhões do BlueBookStudio — Social Media, 007, 009, CIA, Route 66 e demais setores com capa e HUD próprios.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="STUDIO51 · BlueBookStudio">
+<meta property="og:title" content="Estúdio Virtual — STUDIO51">
+<meta property="og:description" content="Percorra os pavilhões do complexo BlueBookStudio: cada porta é um estúdio que existe dentro da ferramenta.">
+<meta property="og:image" content="https://rafaelc666.github.io/studio51/img/setores/007.webp">
+<meta property="og:url" content="https://rafaelc666.github.io/studio51/estudio.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="estudio.css">
+</head>
+<body class="corpo-estudio">
+
+<!-- ═══ cenário: foto real do hangar ═══ -->
+<div class="palco">
+  <div class="palco-foto" id="palco-foto" aria-hidden="true"></div>
+  <video class="palco-video" id="palco-video" muted loop playsinline preload="none" hidden
+         aria-hidden="true"></video>
+  <div class="palco-video-sombra" aria-hidden="true"></div>
+  <div class="palco-grao" aria-hidden="true"></div>
+
+  <!-- HUD mínimo sobre a foto -->
+  <header class="hud">
+    <a class="hud-voltar" id="hud-voltar" href="index.html">← arquivo</a>
+    <span class="hud-cam"><i></i> CAM 01 · REC</span>
+    <span class="hud-clap" id="e-clap">🎬 TAKE 1</span>
+  </header>
+
+  <!-- identificação: letreiro sobre a porta do hangar -->
+  <div class="ident">
+    <span class="ident-setor" id="e-setor">SETOR</span>
+    <h1 class="ident-nome" id="e-nome">—</h1>
+    <span class="ident-frase" id="e-frase">—</span>
+  </div>
+
+  <div class="hud-baixo">
+    <span class="hud-status" id="e-status">—</span>
+    <span class="hud-sigla" id="e-sigla">—</span>
+  </div>
+</div>
+
+<!-- ═══ painel de operação (abaixo do palco) ═══ -->
+<section class="painel">
+  <div class="painel-grid" id="painel-grid"></div>
+
+  <div class="painel-rodape">
+    <div class="painel-log" id="e-log"></div>
+    <div class="painel-acoes" id="e-acoes"></div>
+  </div>
+</section>
+
+<!-- ═══ TeraBrain — memória viva (só na sala terabrain) ═══ -->
+<section class="memoria" id="tb-memoria" hidden>
+  <div class="memoria-texto">
+    <span class="memoria-titulo">MEMÓRIA VIVA</span>
+    <h2 id="tb-h2"></h2>
+    <p class="memoria-lede" id="tb-lede"></p>
+    <ul class="memoria-lista" id="tb-lista"></ul>
+    <div class="memoria-acoes" id="tb-acoes"></div>
+    <div class="memoria-links" id="tb-links"></div>
+  </div>
+  <div class="memoria-cena">
+    <canvas class="tb-brain" id="tb-brain" aria-label="Mapa vivo da memória do TeraBrain — arraste para girar"></canvas>
+    <span class="memoria-dica" aria-hidden="true">↗ MAPA VIVO · ARRASTE</span>
+    <div class="memoria-chips" id="tb-chips" role="group" aria-label="Filtrar memórias por grupo"></div>
+  </div>
+</section>
+
+<footer class="rodape">
+  <span>BlueBookStudio · estúdio virtual</span>
+  <span class="rodape-sep">·</span>
+  <span>silêncio no set… rodando</span>
+</footer>
+
+<script src="folha-a4.js"></script>
+<script src="estudio.js"></script>
+<script src="trilha.js"></script>
+</body>
+</html>
